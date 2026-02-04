@@ -1,3 +1,282 @@
-[data-rem-tags~="plugin-style"] {
-  background: orange;
+/* CENTER QUESTION */
+
+.rn-queue__content
+  .rn-question-rem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* ARROW */
+.rn-queue__content
+  .rn-question-rem > span + span {
+  display: block;
+  margin: 0.5em 0;
+  text-align: center;
+}
+
+/* CENTER NON LIST ANSWERS */
+.rn-queue__content
+  .spaced-repetition-answer:not(:has(.rn-editor)) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* MODIFY MC CARDS */
+.rn-queue__content
+  .spaced-repetition-answer:not(:has(.rn-editor))
+  .linear-editor-item {
+  display: flex;
+  justify-content: flex-start;
+
+  text-align: left;
+}
+
+/* STYLE MC CARDS */
+
+/* HIDE MC FEEDBACK */
+.rn-queue__content
+  .spaced-repetition-answer
+  .whitespace-nowrap {
+  display: none !important;
+}
+
+
+/* CENTER CLOZE CARDS */
+.rn-queue__content .rn-fill-in-blank {
+  text-align: center;
+}
+
+/* _______LIST CARDS_______ */
+
+/* HIDE BULLET */
+.rn-queue__content .rn-rem-bullet {
+  display: none !important;
+}
+
+/* CENTER BLOCK */
+.rn-queue__content
+  .spaced-repetition-answer:has(.rn-editor) {
+  display: flex;
+  justify-content: center;
+}
+
+/* CONSTRAIN WIDTH */
+.rn-queue__content
+  .spaced-repetition-answer:has(.rn-editor)
+  .rn-editor {
+  width: min(300px, 92vw);   /* stable column */
+  margin: 0 auto;
+}
+
+/* LIST CENTERING */
+.rn-queue__content
+  .spaced-repetition-answer:has(.rn-editor)
+  .rn-editor {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+/* FLOW */
+.rn-queue__content
+  .spaced-repetition-answer:has(.rn-editor)
+  .linear-editor-item {
+  display: block;
+  text-align: left;
+  white-space: normal;
+}
+
+/* CENTER REMAINING CARDS ON NUMBERED LIST */
+.rn-queue__content .rn-list-card-remaining-items {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  max-width: 300px; /* match your list column width */
+  
+  font-size: 0.9em;
+  opacity: 0.6;
+  font-family: var(--plugin-font-family); /*VARIABLE FONT FAMILY*/
+  
+}
+
+/* CENTER EXTRA CARD DETAIL */
+
+.rn-queue__content .extra-card-detail {
+  transform: translateX(13px); 
+}
+
+/* CONTAINER */
+.rn-queue__content .extra-card-detail {
+  display: flex;
+  justify-content: center;
+}
+
+/* MATCH ALIGNMENT */
+.rn-queue__content .extra-card-detail > * {
+  width: fit-content;
+  max-width: 100%;
+  text-align: center;
+}
+
+/* CENTER CLOZE + RICH TEXT IN EXTRA CARD DETAIL */
+.rn-queue__content .extra-card-detail .RichTextViewer {
+  text-align: center;
+}
+
+/* CENTER IMAGES / MEDIA */
+.rn-queue__content .extra-card-detail img,
+.rn-queue__content .extra-card-detail video,
+.rn-queue__content .extra-card-detail canvas,
+.rn-queue__content .extra-card-detail svg {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* _____FONT FLASHCARD QUESTION_______ */
+
+.rn-queue__content
+  .rn-question-rem
+  .RichTextViewer,
+.rn-queue__content
+  .rn-question-rem
+  .linear-editor-item,
+.rn-queue__content
+  .rn-question-rem
+  .rn-editor__rem__body,
+.rn-queue__content
+  .rn-question-rem
+  .rn-editor__rem__body__text {
+  font-size: var(--plugin-font-size); /* Variable size */
+  line-height: 1.0;
+  font-family: var(--plugin-font-family); /*Variable font*/
+}
+
+/* _______FONT FLASHCARD ANSWER_____ */
+
+.rn-queue__content
+  .spaced-repetition-answer
+  .RichTextViewer,
+.rn-queue__content
+  .spaced-repetition-answer
+  .linear-editor-item,
+.rn-queue__content
+  .spaced-repetition-answer
+  .rn-editor__rem__body,
+.rn-queue__content
+  .spaced-repetition-answer
+  .rn-editor__rem__body__text {
+  font-size: var(--plugin-font-size); /* Variable size */
+  line-height: 1.0;
+  font-family: var(--plugin-font-family); /* Variable font*/
+}
+
+/* CLOZE INHERIT TEXT  */
+
+.rn-queue__content
+  .rn-fill-in-blank,
+.rn-queue__content
+  .fill-in-the-blank {
+  font-size: inherit !important;
+  font-family: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit;
+  padding: 0.15em 0.4em;
+}
+
+/* FONT EXTRA CARD DETAIL */
+
+.rn-queue__content
+  .extra-card-detail,
+.rn-queue__content
+  .extra-card-detail
+  .RichTextViewer,
+.rn-queue__content
+  .extra-card-detail
+  .linear-editor-item,
+.rn-queue__content
+  .extra-card-detail
+  .rn-editor__rem__body,
+.rn-queue__content
+  .extra-card-detail
+  .rn-editor__rem__body__text {
+  font-size: 18px; 
+  line-height: 1.0;
+  font-family: var(--plugin-font-family); /* Variable font*/
+}
+
+/* DECK TITLE NON-TABLE AND TABLE CARDS */
+
+/* Force left */
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="document"],
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="deck"] {
+  display: inline-block !important;   
+  align-self: flex-start !important;  /* override parent flex centering */
+  text-align: left !important;
+}
+
+/* NON-TABLE CARDS FONT FIX */
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="document"]
+  .RichTextViewer,
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="deck"]
+  .RichTextViewer {
+  font-family: var(--rn-font-ui, Inter, system-ui, sans-serif) !important;
+  font-size: 1em !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+
+/* TABLE CARDS FONT FIX */
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="document"]
+  .linear-editor-item,
+.rn-queue__content
+  .rn-queue-rem[data-queue-rem-tags~="deck"]
+  .linear-editor-item {
+  font-family: var(--rn-font-ui, Inter, system-ui, sans-serif) !important;
+  font-size: 1em !important;
+  font-weight: 500 !important;
+  text-align: left !important;
+}
+
+/* TABLE - TEST INDIVIDUAL CARD DECK TITLE LEFT */
+
+.rn-queue__content
+  .rn-queue-rem
+  > .RichTextViewer,
+.rn-queue__content
+  .rn-queue-rem
+  > .RichTextViewer
+  > .linear-editor-item {
+  text-align: left !important;
+  justify-content: flex-start !important;
+}
+
+/* TABLE - TEST INDIVIDUAL CELLS */
+
+.rn-queue__content
+  .rn-queue-rem.concept_rem_type
+  > .RichTextViewer
+  > .linear-editor-item {
+  
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  font-size: var(--plugin-font-size) !important; /* Variable size*/
+  font-weight: normal !important;
+
+  /* fine tune */
+  transform: translateX(11px);
 }

@@ -1,9 +1,10 @@
 {
-  "author": "EliaScherz",
-  "name": "cardcentric",
-  "description": "Center flashcard content for a more comfortable study experience",
+  "author": "Elia Scherz",
+  "name": "CardCentric",
+  "description": "Center flashcard content and adjust text size for a more comfortable study experience",
   "enableOnMobile": false,
-  "id": "EliaScherz-vnytfgn",
+  "id": "EliaScherz-cardcentricplugin",
+  "repoUrl": "https://github.com/eosinophobe/CardCentric#",
   "manifestVersion": 1,
   "version": {
     "major": 0,
