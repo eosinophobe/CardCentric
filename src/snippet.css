@@ -129,8 +129,8 @@
   text-align: center;
   max-width: 300px; 
   transform: translateX(-1.2vw);
-  font-size: 0.9em;
-  opacity: 0.6;
+  font-size: calc(var(--plugin-font-size, 1rem) * 0.7);
+  opacity: 0.7;
   font-family: var(--plugin-font-family); /*VARIABLE FONT FAMILY*/
   
 }
@@ -232,7 +232,7 @@
 .rn-queue__content
   .extra-card-detail
   .rn-editor__rem__body__text {
-  font-size: 18px; 
+  font-size: calc(var(--plugin-font-size, 1rem) * 0.9); 
   line-height: 1.0;
   font-family: var(--plugin-font-family); /* Variable font*/
 }
@@ -305,4 +305,16 @@
   font-size:  var(--plugin-font-size) !important; /* Variable size*/
   font-weight: normal !important;
 
+}
+
+
+/* New wrapper fix macOS and web*/
+.rn-queue__content
+  .rn-queue-rem.concept_rem_type {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center !important;
+  text-align: center !important;
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  font-size:  var(--plugin-font-size) !important; /* Variable size*/
 }
