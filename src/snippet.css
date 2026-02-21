@@ -112,6 +112,26 @@
   padding-right: 0px;
 }
 
+/* Center toggle boxes for lists */
+.rn-queue__content 
+  .rem-button__container {
+
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+
+  display: flex !important;
+  align-items: center !important;
+
+  height: auto !important;
+}
+
+.rn-queue__content 
+  .rem-button__container 
+  > .w-full.flex.items-center.justify-end {
+
+  margin-top: 0 !important;
+}
 
 /* FLOW */
 .rn-queue__content
@@ -317,4 +337,45 @@
   text-align: center !important;
   font-family: var(--plugin-font-family) !important; /* Variable font */
   font-size:  var(--plugin-font-size) !important; /* Variable size*/
+}
+
+
+/* Card clusters */
+
+.rn-queue__content
+  .spaced-repetition-answer:has(.cluster-answer-container)
+  .linear-editor-item {
+  display: inline-block !important;
+  width: fit-content !important;
+  max-width: 100%;
+  text-align: center !important;
+}
+
+.rn-queue__content
+  .spaced-repetition-answer:has(.cluster-answer-container)
+  .flex.flex-col {
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.rn-queue__content
+  .spaced-repetition-answer:has(.cluster-answer-container)
+  .flex.items-center.justify-between {
+  justify-content: center !important;
+}
+
+.rn-queue__content
+  .spaced-repetition-answer:has(.cluster-answer-container)
+  .flex.items-center {
+  width: fit-content !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.rn-queue__content
+  .spaced-repetition-answer:has(.cluster-answer-container)
+  .pl-6 {
+  padding-left: 0 !important;
+  border-left: none !important;
 }
