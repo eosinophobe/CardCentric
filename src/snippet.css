@@ -14,7 +14,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  text-align: center;
+  
 }
 
 /* MODIFY MC CARDS */
@@ -379,3 +379,92 @@
   padding-left: 0 !important;
   border-left: none !important;
 }
+
+/* Fix modified text (superscript, bold) to break lines */
+
+
+.rn-queue .linear-editor-item.whitespace-pre-wrap {
+  display: inline !important;
+  white-space: pre-wrap !important;
+}
+
+/* Extra card detail fragmentation fix */
+.rn-queue .extra-card-detail__item {
+  display: block !important;
+}
+
+.rn-queue .extra-card-detail__item .RichTextViewer {
+  display: inline !important;
+}
+
+.rn-queue .extra-card-detail__item span {
+  display: inline !important;
+  flex: none !important;
+}
+
+/* Fix for parents not centering + Gradient */
+
+/* Remove inline indentation */
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem { 
+     margin-left: 0 !important; 
+     } 
+
+/* Opacity and text size gradient */
+
+/* Flashcard title */ 
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
+     display: flex; 
+     justify-content: center; 
+      
+     }
+     
+/* First parent */ 
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
+     display: flex; 
+     justify-content: center; 
+      
+     font-size: calc(var(--plugin-font-size, 1rem) * 1.1);
+     opacity: 0.8; 
+     }
+     
+     
+     /* Second parent */ 
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
+     display: flex; 
+     justify-content: center; 
+      
+      font-size: calc(var(--plugin-font-size, 1rem) * 1.05);
+     opacity: 0.7; 
+     }
+     
+      /* Third parent */ 
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
+     display: flex; 
+     justify-content: center; 
+      
+      font-size: calc(var(--plugin-font-size, 1rem) * 1.005);
+     opacity: 0.6
+     }
+     
+    
+    /* Direct parent */ 
+ .rn-queue__content 
+ .spaced-repetition__prompt 
+ .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
+     display: flex; 
+     justify-content: center; 
+      
+      font-size: calc(var(--plugin-font-size, 1rem) * 1.0005);
+     opacity: 0.5; 
+     }
+
