@@ -343,42 +343,39 @@
 /* Card clusters */
 
 .rn-queue__content
-  .spaced-repetition-answer:has(.cluster-answer-container)
-  .linear-editor-item {
-  display: inline-block !important;
-  width: fit-content !important;
-  max-width: 100%;
-  text-align: center !important;
-}
+.spaced-repetition-answer:has(.cluster-answer-container) {
 
-.rn-queue__content
-  .spaced-repetition-answer:has(.cluster-answer-container)
-  .flex.flex-col {
-  width: fit-content !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-.rn-queue__content
-  .spaced-repetition-answer:has(.cluster-answer-container)
-  .flex.items-center.justify-between {
-  justify-content: center !important;
-}
-
-.rn-queue__content
-  .spaced-repetition-answer:has(.cluster-answer-container)
+  /* center the answer container */
+  .flex.flex-col,
   .flex.items-center {
+    max-width: 100%;
+    margin-inline: auto !important;
+    text-align: center;
+  }
+
+  /* center content */
+  .flex.items-center.justify-between {
+    justify-content: center !important;
+  }
+
+  /* remove the left indentation bar */
+  .pl-6 {
+    padding-left: 0 !important;
+    border-left: none !important;
+  }
+
+  /* center editor content */
+  .linear-editor-item {
+    text-align: center !important;
+  }
+  
+  .linear-editor-item.inline-flex {
   width: fit-content !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+  margin-inline: auto;
+}
 }
 
-.rn-queue__content
-  .spaced-repetition-answer:has(.cluster-answer-container)
-  .pl-6 {
-  padding-left: 0 !important;
-  border-left: none !important;
-}
+
 
 /* Fix modified text (superscript, bold) to break lines */
 

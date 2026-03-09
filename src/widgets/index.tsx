@@ -34,9 +34,10 @@ await plugin.settings.registerDropdownSetting({
     { key: "monospace", value: "monospace", label: "Monospace" },
     { key: "arial", value: "arial", label: "Arial" },
     { key: "times", value: "times", label: "Times New Roman" },
+    { key: "helvetica", value: "helvetica", label: "Helvetica" },
     { key: "georgia", value: "georgia", label: "Georgia" },
-    { key: "latin-modern-math", value: "latin-modern-math",label: "Latin Modern Math (requires installing)",
-}
+    { key: "latin-modern-math", value: "latin-modern-math",label: "Latin Modern Math (requires installing)" },
+    { key: "josefin-sans", value: "josefin-sans", label: "Josefin Sans (requires installing)" },
 
   ],
 });
