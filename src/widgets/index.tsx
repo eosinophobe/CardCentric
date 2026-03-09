@@ -100,8 +100,14 @@ plugin.track(async (reactivePlugin) => {
      case "latin-modern-math":
       cssFontFamily = '"Latin Modern Math", serif';
       break;
+    case "helvetica":
+      cssFontFamily = "Helvetica, sans-serif";
+      break;
     case "sans-serif":
       cssFontFamily = "sans-serif";
+      break;
+    case "josefin-sans":
+      cssFontFamily = '"Josefin Sans", sans-serif';
       break;
     case "serif":
       cssFontFamily = "serif";
