@@ -465,3 +465,9 @@
      opacity: 0.5; 
      }
 
+/* stop latex line break */
+
+ .rn-queue__content
+ .max-w-\[calc\(100\%-7px\)\] {
+   max-width: none !important;
+ }

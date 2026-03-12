@@ -4,6 +4,8 @@ Center flashcard content for a more comfortable study experience
 
 You can adjust the text size and font in the plugin settings
 
+
+Bugs? Feedback? Suggestions? Let me know on Discord: _flipase
 ## Showcase
 
 <p align="center">
