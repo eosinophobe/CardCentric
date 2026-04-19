@@ -402,68 +402,75 @@
 /* Fix for parents not centering + Gradient */
 
 /* Remove inline indentation */
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem { 
-     margin-left: 0 !important; 
-     } 
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem {
+  margin-left: 0 !important;
+}
 
-/* Opacity and text size gradient */
+/* Base style for all visible parent rems */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem) > .rn-queue-rem {
+  display: flex;
+  justify-content: center;
+  font-size: calc(var(--plugin-font-size, 1rem) * 1.05) ;
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  opacity: 0.7;
+}
 
-/* Flashcard title */ 
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
-     display: flex; 
-     justify-content: center; 
-      
-     }
-     
-/* First parent */ 
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
-     display: flex; 
-     justify-content: center; 
-      
-     font-size: calc(var(--plugin-font-size, 1rem) * 1.1);
-     opacity: 0.8; 
-     }
-     
-     
-     /* Second parent */ 
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
-     display: flex; 
-     justify-content: center; 
-      
-      font-size: calc(var(--plugin-font-size, 1rem) * 1.05);
-     opacity: 0.7; 
-     }
-     
-      /* Third parent */ 
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
-     display: flex; 
-     justify-content: center; 
-      
-      font-size: calc(var(--plugin-font-size, 1rem) * 1.005);
-     opacity: 0.6
-     }
-     
-    
-    /* Direct parent */ 
- .rn-queue__content 
- .spaced-repetition__prompt 
- .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) .indented-rem:not(.rn-question-rem) > .rn-queue-rem { 
-     display: flex; 
-     justify-content: center; 
-      
-      font-size: calc(var(--plugin-font-size, 1rem) * 1.0005);
-     opacity: 0.5; 
-     }
+/* Make inner text inherit the parent row size */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem) > .rn-queue-rem > .RichTextViewer,
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem) > .rn-queue-rem > .RichTextViewer > .linear-editor-item {
+  font-size: inherit !important;
+  line-height: inherit;
+}
+
+/* Parent level 2 */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  > .rn-queue-rem {
+  font-size: calc(var(--plugin-font-size, 1rem) * 1.005) ;
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  opacity: 0.75;
+}
+
+/* Parent level 3 */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  > .rn-queue-rem {
+  font-size: calc(var(--plugin-font-size, 1rem) * 1.0005) ;
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  opacity: 0.7;
+}
+
+/* Parent level 4+ */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  > .rn-queue-rem {
+  font-size: calc(var(--plugin-font-size, 1rem) * 1.00005) ;
+  font-family: var(--plugin-font-family) !important; /* Variable font */
+  opacity: 0.65;
+}
+
+/* Stop document title from adopting gradient */
+[data-queue-rem-tags="document"] {
+  font-size: 1rem !important;
+  opacity: 1 !important;
+}
 
 /* stop latex line break */
 
@@ -471,3 +478,48 @@
  .max-w-\[calc\(100\%-7px\)\] {
    max-width: none !important;
  }
+
+/* Fix Hide-In-Queue plugin incompatibility */
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem
+  > .rn-bullet-container::after,
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem
+  > .rem-bullet__document::after {
+  content: none !important;
+  display: none !important;
+}
+
+/* Hide bullet */
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem
+  > .rn-bullet-container,
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem
+  > .rem-bullet__document {
+  display: none !important;
+}
+
+/* Center the row */
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem {
+  display: flex !important;
+  justify-content: center !important;
+  width: 100% !important;
+}
+
+/* Placeholder to take up space */
+.rn-queue__content--answer-hidden
+  [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
+  > .rn-queue-rem::after {
+  content: "Hidden in queue" !important;
+  display: block !important;
+  opacity: 0.3 !important;
+  white-space: nowrap !important;
+  text-align: center !important;
+}
