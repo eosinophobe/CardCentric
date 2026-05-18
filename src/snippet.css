@@ -479,7 +479,7 @@
    max-width: none !important;
  }
 
-/* Fix Hide-In-Queue plugin incompatibility */
+/* ---Fix Hide-In-Queue plugin incompatibility--- */
 .rn-queue__content--answer-hidden
   [data-queue-rem-container-tags~="hide-in-queue"]:not(.rn-question-rem)
   > .rn-queue-rem
@@ -522,4 +522,9 @@
   opacity: 0.3 !important;
   white-space: nowrap !important;
   text-align: center !important;
+}
+
+/* ---Fix Remove-From-Queue plugin incompatibility--- */
+.rn-queue__content [data-queue-rem-container-tags~="remove-from-queue"]:not(.rn-question-rem) > .rn-queue-rem {
+  display: none !important;
 }
