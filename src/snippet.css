@@ -380,7 +380,7 @@
 /* Fix modified text (superscript, bold) to break lines */
 
 
-.rn-queue .linear-editor-item.whitespace-pre-wrap {
+.rn-queue .linear-editor-item.whitespace-pre-wrap:not([data-test="Edit In Queue"] *) {
   display: inline !important;
   white-space: pre-wrap !important;
 }
