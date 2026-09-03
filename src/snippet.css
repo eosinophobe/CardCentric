@@ -79,9 +79,7 @@
 
 /*MC EXTRA CARD DETAIL*/
 .extra-card-detail__item.relative
-  .linear-editor-item.whitespace-pre-wrap
-  > span {
-  display: block;
+  .linear-editor-item.whitespace-pre-wrap {
   text-align: center;
 }
 
@@ -380,7 +378,7 @@
 /* Fix modified text (superscript, bold) to break lines */
 
 
-.rn-queue .linear-editor-item.whitespace-pre-wrap:not([data-test="Edit In Queue"] *) {
+.rn-queue .linear-editor-item.whitespace-pre-wrap:not([data-test="Edit In Queue"] *):not(.extra-card-detail__item .linear-editor-item) {
   display: inline !important;
   white-space: pre-wrap !important;
 }
@@ -390,15 +388,6 @@
   display: block !important;
 }
 
-.rn-queue .extra-card-detail__item .RichTextViewer {
-  display: inline !important;
-}
-
-.rn-queue .extra-card-detail__item span {
-  display: inline !important;
-  flex: none !important;
-}
-
 /* Fix for parents not centering + Gradient */
 
 /* Remove inline indentation */
@@ -406,6 +395,96 @@
   .spaced-repetition__prompt
   .indented-rem {
   margin-left: 0 !important;
+}
+
+/* Center answers rendered directly after the flashcard delimiter (PARENTS) */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem
+  > .rn-flashcard-delimiter
+  + .RichTextViewer {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem
+  > .rn-flashcard-delimiter {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem
+  > .rn-flashcard-delimiter
+  + .RichTextViewer
+  > .linear-editor-item {
+  text-align: center !important;
+}
+
+/* Match the parent opacity gradient on delimiter answers */
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter,
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter
+  + .RichTextViewer {
+  opacity: 0.7;
+}
+
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter,
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter
+  + .RichTextViewer {
+  opacity: 0.75;
+}
+
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter,
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter
+  + .RichTextViewer {
+  opacity: 0.7;
+}
+
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter,
+.rn-queue__content
+  .spaced-repetition__prompt
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem)
+  .indented-rem:not(.rn-question-rem):has(> .rn-flashcard-delimiter)
+  > .rn-flashcard-delimiter
+  + .RichTextViewer {
+  opacity: 0.65;
 }
 
 /* Base style for all visible parent rems */
@@ -426,6 +505,8 @@
 .rn-queue__content
   .spaced-repetition__prompt
   .indented-rem:not(.rn-question-rem) > .rn-queue-rem > .RichTextViewer > .linear-editor-item {
+  width: 100% !important;
+  text-align: center !important;
   font-size: inherit !important;
   line-height: inherit;
 }
